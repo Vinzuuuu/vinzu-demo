@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global zero corner radius — applies to every element site-wide */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
+  }
+
+  .rounded-circle {
+    border-radius: 9999px !important;
+  }
+
+  .app-store-btn {
+    border-radius: 10px !important;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 210 100% 99%;
+    --foreground: 215 62% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 62% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 62% 18%;
+    --primary: 191 75% 50%;
+    --primary-foreground: 215 62% 18%;
+    --secondary: 210 50% 96%;
+    --secondary-foreground: 215 62% 18%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 215 25% 40%;
+    --accent: 210 50% 96%;
+    --accent-foreground: 215 62% 18%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 191 75% 50%;
+    --chart-1: 191 75% 50%;
+    --chart-2: 200 55% 45%;
+    --chart-3: 180 55% 42%;
+    --chart-4: 215 62% 50%;
+    --chart-5: 250 45% 58%;
+    --radius: 0;
+    --font-heading: ui-sans-serif, system-ui, sans-serif;
+    --font-body: ui-sans-serif, system-ui, sans-serif;
+    --font-display: ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 100% 99%;
+    --foreground: 215 62% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 62% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 62% 18%;
+    --primary: 191 75% 50%;
+    --primary-foreground: 215 62% 18%;
+    --secondary: 210 50% 96%;
+    --secondary-foreground: 215 62% 18%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 215 25% 40%;
+    --accent: 210 50% 96%;
+    --accent-foreground: 215 62% 18%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 191 75% 50%;
+    --chart-1: 191 75% 50%;
+    --chart-2: 200 55% 45%;
+    --chart-3: 180 55% 42%;
+    --chart-4: 215 62% 50%;
+    --chart-5: 250 45% 58%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
