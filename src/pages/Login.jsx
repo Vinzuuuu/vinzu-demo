@@ -23,8 +23,8 @@ export default function Login() {
     setError("");
     setLoading(true);
     try {
-      await base44.auth.loginViaEmailPassword(email, password);
-      window.location.href = returnTo;
+const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+if (signInError) throw signInError;      window.location.href = returnTo;
     } catch (err) {
       setError(err.message || t("auth.invalid"));
     } finally {
@@ -32,9 +32,14 @@ export default function Login() {
     }
   };
 
-  const handleGoogle = () => {
-    base44.auth.loginWithProvider("google", returnTo);
-  };
+  const handleGoogle = async () => {
+  const target = returnTo.startsWith("http") ? returnTo : window.location.origin + returnTo;
+  const { error: oauthError } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: { redirectTo: target },
+  });
+  if (oauthError) setError(oauthError.message);
+};
 
   return (
     <AuthLayout
